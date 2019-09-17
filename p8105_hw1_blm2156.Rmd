@@ -35,10 +35,26 @@ as.numeric(problem_1_df$vec_factor)
 ```
 The as.numeric function converts the variables that were written in my logical and factor vectors to numeric vectors. This does explain what happens when we take the mean of the logical, character, and factor vectors. The logical vector converted our True/False answers into 1's and 0's. The as.numeric function was unable to convert my character vector into a numeric vector as every variable was text; however, if I included numeric variables in the original vector, this function would convert those numbers. My factor vector was converted into different groups. My "low" variable was converted to the number 2, my "moderate" variable was converted to the number 3, and my "high" variable was converted to the number 1. These corresponding numbers explain how R was able to produce a mean for these vectors. 
 
-```{r}
+```{r, eval = TRUE}
 as.numeric(problem_1_df$vec_logical)*(problem_1_df$vec_numeric)
 as.factor(problem_1_df$vec_logical)*(problem_1_df$vec_numeric)
 as.numeric(as.factor(problem_1_df$vec_logical))*(problem_1_df$vec_numeric)
 ```
 
 OH Question: What is the difference between vec_character and vec_factor?
+
+## Problem 2
+```{r}
+problem_2_df = tibble(
+  x = rnorm(500),
+  y = rnorm(500),
+  vec_logical = (x + y) > 1,
+  as.numeric(problem_2_df$vec_logical),
+  as.factor(problem_2_df$vec_logical)
+)
+```
+
+
+
+
+
