@@ -49,9 +49,17 @@ problem_2_df = tibble(
   x = rnorm(500),
   y = rnorm(500),
   vec_logical = (x + y) > 1,
-  as.numeric(problem_2_df$vec_logical),
-  as.factor(problem_2_df$vec_logical)
+  vec_num_p2 = as.numeric(problem_2_df$vec_logical),
+  vec_factor_p2 = as.factor(problem_2_df$vec_logical)
 )
+
+#nrow(problem_2_df$vec_num_p2)
+#nrow(problem_2_df$vec_factor_p2)
+
+ggplot(problem_2_df) + geom_point(aes(x = x ,y = y), color = 'blue')
+
+ggplot(problem_2_df) + geom_point(aes(x = x ,y = y), color = 'blue')
+
 ```
 
 
